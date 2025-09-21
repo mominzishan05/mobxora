@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { HashRouter, Routes, Route, Navigate } from "react-router-dom"; // ✅ HashRouter
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Cookies from "js-cookie";
 import { Provider } from "react-redux";
 import { Store } from "./App/Store";
@@ -23,7 +23,7 @@ function App() {
         Cookies.remove("authToken");
         setIsAuth(false);
         alert("Session expired! You are logged out.");
-      }, 60000); // 1 min
+      }, 60000);
 
       return () => clearTimeout(timer);
     }
@@ -31,8 +31,7 @@ function App() {
 
   return (
     <Provider store={Store}>
-      {/* ✅ Use HashRouter with basename */}
-      <HashRouter basename="/mobxora/">
+      <BrowserRouter basename="/mobxora/">
         <Navbar />
         <Routes>
           <Route path="/" element={<IntroPage />} />
@@ -57,7 +56,7 @@ function App() {
           <Route path="/login" element={<LoginPage setIsAuth={setIsAuth} />} />
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>
-      </HashRouter>
+      </BrowserRouter>
     </Provider>
   );
 }

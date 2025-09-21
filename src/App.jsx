@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { HashRouter, Routes, Route, Navigate } from "react-router-dom"; // ✅ HashRouter
 import Cookies from "js-cookie";
 import { Provider } from "react-redux";
 import { Store } from "./App/Store";
@@ -31,7 +31,8 @@ function App() {
 
   return (
     <Provider store={Store}>
-      <BrowserRouter>
+      {/* ✅ Use HashRouter with basename */}
+      <HashRouter basename="/mobxora/">
         <Navbar />
         <Routes>
           <Route path="/" element={<IntroPage />} />
@@ -56,7 +57,7 @@ function App() {
           <Route path="/login" element={<LoginPage setIsAuth={setIsAuth} />} />
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>
-      </BrowserRouter>
+      </HashRouter>
     </Provider>
   );
 }

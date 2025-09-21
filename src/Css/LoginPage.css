@@ -1,0 +1,148 @@
+/* Full page background */
+.login-page {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #ffffff, #ffffff); /* Blue gradient */
+  font-family: "Poppins", sans-serif;
+  overflow: hidden; /* prevent scroll */
+}
+
+/* Login box */
+.login-box {
+  background: #fefefe;
+  padding: 40px 30px;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.login-box h1 {
+  margin-bottom: 25px;
+  color: #1e3c72; /* Dark blue */
+}
+
+/* Inputs */
+.login-box input {
+  width: 90%;
+  padding: 13px 0px;
+  margin: 8px 0;
+  border-radius: 25px;
+  border: 1px solid #ccc;
+  outline: none;
+  transition: all 0.3s ease;
+  text-align: center; /* <-- Add this line */
+}
+
+.login-box ::placeholder {
+  display: flex;
+  text-align: center; /* center placeholder text */
+  padding-left: 0; /* remove extra padding */
+  padding-left: 0%;
+}
+
+.login-box input:focus {
+  border: 1px solid #2a5298;
+  box-shadow: 0 0 10px rgba(42, 82, 152, 0.4);
+}
+
+/* Button */
+.login-box button {
+  width: 50%;
+  padding: 12px 0;
+  margin-top: 15px;
+  border: none;
+  border-radius: 25px;
+  background: linear-gradient(
+    135deg,
+    #ffb347,
+    #ffcc33
+  ); /* Orange-Yellow gradient */
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.login-box button:hover {
+  background: linear-gradient(135deg, #ffaa00, #ffdd00);
+  transform: scale(1.05);
+  box-shadow: 0 6px 15px rgba(255, 170, 0, 0.3);
+}
+
+/* Signup text */
+.signup-text {
+  margin-top: 15px;
+  font-size: 14px;
+  color: #333;
+}
+
+.signup-text a {
+  color: #ffb347;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.signup-text a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 425px) {
+  .login-box {
+    padding: 30px 20px;
+    max-height: 90vh; /* prevent mobile overflow */
+  }
+
+  .login-box h1 {
+    font-size: 24px;
+  }
+
+  .login-box button {
+    font-size: 14px;
+  }
+  .login-page {
+    background: linear-gradient(135deg, #ffffff, #ffffff); /* Blue gradient */
+  }
+  @media (max-width: 425px) {
+    .login-box {
+      padding: 30px 20px;
+      max-height: 90vh; /* prevent mobile overflow */
+      text-align: center; /* center all text */
+    }
+
+    .login-box h1 {
+      font-size: 24px;
+      text-align: center; /* ensure heading is center */
+    }
+
+    .login-box button {
+      font-size: 14px;
+    }
+
+    .login-page {
+      background: linear-gradient(
+        135deg,
+        #ffffff,
+        #ffffff
+      ); /* White background */
+    }
+
+    .login-box input {
+      width: 90%;
+      padding: 13px 0px;
+      margin: 10px auto; /* center horizontally */
+      border-radius: 25px;
+      border: 1px solid #ccc;
+      outline: none;
+      display: block; /* ensure input is block for margin auto to work */
+      transition: all 0.3s ease;
+      text-align: center; /* text inside input is center */
+    }
+  }
+}
